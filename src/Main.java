@@ -26,9 +26,6 @@ public class Main {
         showNamesAllEmployees(employeeDatabase);
         indexingSalary(employeeDatabase);
 
-
-       // calculationMinSalaryDepartment(employeeDatabase);
-
     }
         public static void isSummSalary(Employee [] arr){
             double total=0;
@@ -67,7 +64,7 @@ public class Main {
             for (int i=0; i<arr.length;i++){
                 total+=arr[i].getSalary();
             }
-            return total/10;
+            return total/ arr.length;
 
         }
         public static void showNamesAllEmployees(Employee[] arr) {
@@ -83,11 +80,15 @@ public class Main {
                 System.out.println("Индексация зарплаты на 10% = "+total);
             }
 
+
+        }
+
         }
 
 
 
-    }
+
+
 
 
 
