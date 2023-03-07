@@ -24,7 +24,7 @@ public class Main {
         double averageSalary=isAverageValueSalaries(employeeDatabase);
         System.out.println("Среднее значение зарплат =   "+averageSalary);
         showNamesAllEmployees(employeeDatabase);
-        indexingSalary(employeeDatabase);
+        //indexingSalary(employeeDatabase);
 
     }
         public static void isSummSalary(Employee [] arr){
@@ -72,16 +72,14 @@ public class Main {
                 System.out.println("Ф.И.О сотрудника : "+ arr[i].getSurname() +" "+ arr[i].getName()+" " + arr[i].getPatronymic());
             }
         }
-        static public void indexingSalary(Employee[] arr){
+       /* static public void indexingSalary(Employee[] arr){
         double indexingArgument=0.1;
         double total=0;
             for (int i = 0; i < arr.length; i++){
                 total=indexingArgument*arr[i].getSalary()+arr[i].getSalary();
                 System.out.println("Индексация зарплаты на 10% = "+total);
             }
-
-
-        }
+        }*/
 
         }
 
