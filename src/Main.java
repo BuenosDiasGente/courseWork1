@@ -19,10 +19,15 @@ public class Main {
 
 
         isSummSalary(employeeDatabase);
-        calculatinMinAndMaxSalary(employeeDatabase);
+        calculatinMinSalary(employeeDatabase);
+        calculatinMaxSalary(employeeDatabase);
         double averageSalary=isAverageValueSalaries(employeeDatabase);
         System.out.println("Среднее значение зарплат =   "+averageSalary);
         showNamesAllEmployees(employeeDatabase);
+        indexingSalary(employeeDatabase);
+
+
+       // calculationMinSalaryDepartment(employeeDatabase);
 
     }
         public static void isSummSalary(Employee [] arr){
@@ -34,20 +39,29 @@ public class Main {
 
 
         }
-        public static void calculatinMinAndMaxSalary(Employee [] arr){
-        double max=arr[0].getSalary();
-        double min=arr[0].getSalary();
+        public static void calculatinMinSalary(Employee [] arr){
+        Employee employeeWithMinSalary=arr[0];
         for (int i=0; i<arr.length; i++){
-            if(arr[i].getSalary()>max){
-                max=arr[i].getSalary();
-            }if (arr[i].getSalary()<min){
-                min=arr[i].getSalary();
+            if (arr[i].getSalary()<employeeWithMinSalary.getSalary()){
+                employeeWithMinSalary=arr[i];
             }
-        }
-            System.out.println("Сотрудник с минимальной зарплатой = " + min);
-            System.out.println("Сотрудника с максимальной зарплатой =" + max);
+            } System.out.println("Сотрудник с минимальной зарплатой = " + employeeWithMinSalary.getSurname()+" " +employeeWithMinSalary.getName()+ "  "
+            +employeeWithMinSalary.getPatronymic()+ "  "+employeeWithMinSalary.getSalary());
+
 
         }
+        public static void calculatinMaxSalary(Employee[] arr){
+            Employee employeeWithMaxSalary=arr[0];
+            for (int i=0; i<arr.length; i++){
+                if ( arr[i].getSalary()>employeeWithMaxSalary.getSalary()){
+                    employeeWithMaxSalary=arr[i];
+                }
+            } System.out.println("Сотрудник с максимальной зарплатой = " + employeeWithMaxSalary.getSurname()+" " +employeeWithMaxSalary.getName()+ "  "
+                    +employeeWithMaxSalary.getPatronymic()+ "  "+employeeWithMaxSalary.getSalary());
+        }
+
+
+
         public static double isAverageValueSalaries(Employee [] arr){
             double total=0;
             for (int i=0; i<arr.length;i++){
@@ -61,9 +75,22 @@ public class Main {
                 System.out.println("Ф.И.О сотрудника : "+ arr[i].getSurname() +" "+ arr[i].getName()+" " + arr[i].getPatronymic());
             }
         }
+        static public void indexingSalary(Employee[] arr){
+        double indexingArgument=0.1;
+        double total=0;
+            for (int i = 0; i < arr.length; i++){
+                total=indexingArgument*arr[i].getSalary()+arr[i].getSalary();
+                System.out.println("Индексация зарплаты на 10% = "+total);
+            }
+
+        }
 
 
 
     }
+
+
+
+
 
 
