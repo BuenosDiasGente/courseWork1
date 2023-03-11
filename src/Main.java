@@ -1,9 +1,9 @@
 import java.util.Arrays;
 
 public class Main {
-
+    private static Employee[] employeeDatabase = new Employee[10];
     public static void main(String[] args) {
-        Employee[] employeeDatabase = new Employee[10];
+
         employeeDatabase[0] = new Employee("Petrov", "Ivan", "Vasilievich", 3, 33000);
         employeeDatabase[1] = new Employee("Ivanov", "Petr", "Vasilievich", 4, 39080);
         employeeDatabase[2] = new Employee("Petrov", "Sergiy", "Vasilievich", 3, 20000);
@@ -18,7 +18,7 @@ public class Main {
         System.out.println(Arrays.toString(employeeDatabase));
 
 
-        isSummSalary(employeeDatabase);
+        isSummSalary();
         calculatinMinSalary(employeeDatabase);
         calculatinMaxSalary(employeeDatabase);
         double averageSalary=isAverageValueSalaries(employeeDatabase);
@@ -26,11 +26,12 @@ public class Main {
         showNamesAllEmployees(employeeDatabase);
         //indexingSalary(employeeDatabase);
 
+
     }
-        public static void isSummSalary(Employee [] arr){
+        public static void isSummSalary(){
             double total=0;
-            for (int i=0; i<arr.length;i++){
-                total+=arr[i].getSalary();
+            for (Employee employee : employeeDatabase) {
+                total += employee.getSalary();
             }
             System.out.println("Cумма затрат на зарплаты в месяц = "+ total);
 
@@ -72,11 +73,12 @@ public class Main {
                 System.out.println("Ф.И.О сотрудника : "+ arr[i].getSurname() +" "+ arr[i].getName()+" " + arr[i].getPatronymic());
             }
         }
-       /* static public void indexingSalary(Employee[] arr){
+      /* static public void indexingSalary(Employee[] arr){
         double indexingArgument=0.1;
         double total=0;
             for (int i = 0; i < arr.length; i++){
                 total=indexingArgument*arr[i].getSalary()+arr[i].getSalary();
+
                 System.out.println("Индексация зарплаты на 10% = "+total);
             }
         }*/
